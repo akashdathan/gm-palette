@@ -1,0 +1,37 @@
+{
+  "name": "gm-palette",
+  "version": "1.0.0",
+  "description": "Dominant color and palette using graphicsmagick.",
+  "main": "./build/index.js",
+  "typings": "./build/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akashdathan/gm-palette.git"
+  },
+  "keywords": [
+    "dominant color",
+    "colors",
+    "top colors",
+    "palette",
+    "image colors",
+    "gm colors",
+    "gm palette",
+    "graphicsmagick"
+  ],
+  "author": "Akash Dathan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akashdathan/gm-palette/issues"
+  },
+  "homepage": "https://github.com/akashdathan/gm-palette#readme",
+  "dependencies": {
+    "@types/gm": "^1.17.33",
+    "@types/lodash": "^4.14.92",
+    "@types/node": "^9.3.0",
+    "gm": "^1.23.1",
+    "lodash": "^4.17.4"
+  }
+}
