@@ -22,6 +22,8 @@ class Palette {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const palette = yield Palette.getTopColors(image, colorCount || 10);
+                if (!palette)
+                    throw (new Error(`PALETTE_DETECTION_FAILED`));
                 if (callback)
                     callback(undefined, palette);
                 else
@@ -38,7 +40,10 @@ class Palette {
     static dominantColor(image, callback) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const palette = yield Palette.getTopColors(image, 1), dominantColor = palette[0];
+                const palette = yield Palette.getTopColors(image, 1);
+                if (!palette || !palette.length)
+                    throw (new Error(`PALETTE_DETECTION_FAILED`));
+                const dominantColor = palette[0];
                 if (callback)
                     callback(undefined, dominantColor);
                 else

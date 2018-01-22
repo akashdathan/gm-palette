@@ -15,7 +15,8 @@ export class Palette {
   static async palette(image : Types.InputImage, colorCount ?: number, callback ?: Types.callback) {
     try {
       const palette = await Palette.getTopColors(image, colorCount || 10)
-      
+      if(!palette) throw(new Error(`PALETTE_DETECTION_FAILED`))
+
       if(callback) callback(undefined, palette)
       else return palette
     } catch(error) {
@@ -26,8 +27,10 @@ export class Palette {
 
   static async dominantColor(image : Types.InputImage, callback ?: Types.callback) {
     try {
-      const palette       = await Palette.getTopColors(image, 1),
-            dominantColor = palette[0]
+      const palette = await Palette.getTopColors(image, 1)
+      if(!palette || !palette.length) throw(new Error(`PALETTE_DETECTION_FAILED`))
+
+      const dominantColor = palette[0]
         
       if(callback) callback(undefined, dominantColor)
       else return dominantColor
