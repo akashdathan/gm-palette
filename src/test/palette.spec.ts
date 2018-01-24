@@ -18,7 +18,7 @@ import * as path                                 from 'path'
 describe("Dominant Color", () => {
   describe("Success", () => {
     it("r, g, b to exist in the response", async () => {
-        const result = await dominantColor(path.resolve(__dirname, '../../sample-image.jpg')) as Types.rgb
+        const result = await dominantColor(path.join(__dirname, '../../sample-image.jpg')) as Types.rgb
         expect(result).to.have.property('r')
         expect(result).to.have.property('g')
         expect(result).to.have.property('b')
@@ -29,7 +29,7 @@ describe("Dominant Color", () => {
 describe("Palette", () => {
   describe("Success", () => {
     it("Array of r, g, b to exist in the response", async () => {
-      const result = await palette(path.resolve(__dirname, '../../sample-image.jpg'), 3) as Types.rgb[]
+      const result = await palette(path.join(__dirname, '../../sample-image.jpg'), 3) as Types.rgb[]
 
       expect(result.length).to.equal(3)
 
