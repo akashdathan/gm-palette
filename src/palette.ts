@@ -42,7 +42,7 @@ export class Palette {
 
   private static async getTopColors(image : Types.InputImage, colorCount : number) : Promise<Types.palette> {
     const HIST_START = 'comment={',
-          HIST_END   = '\x0A}\x0A\x0C\x0A'
+          HIST_END   = '\x0A}'
 
     const strData = await new Promise((resolve, reject) => {
       gm(image)
@@ -64,6 +64,7 @@ export class Palette {
           endIndex   = strData.indexOf(HIST_END),
           cData      = strData.slice(beginIndex, endIndex).split('\n')
   
+    if(cData.length > 8) cData.splice(0, cData.length - 8)
     if(beginIndex === -1 || endIndex === -1) throw(new Error(`PALETTE_DETECTION_FAILED: Image not found.`))
 
     return lo.compact(lo.map(cData, Palette.parseHistogramLine))

@@ -59,7 +59,7 @@ class Palette {
     }
     static getTopColors(image, colorCount) {
         return __awaiter(this, void 0, void 0, function* () {
-            const HIST_START = 'comment={', HIST_END = '\x0A}\x0A\x0C\x0A';
+            const HIST_START = 'comment={', HIST_END = '\x0A}';
             const strData = yield new Promise((resolve, reject) => {
                 gm(image)
                     .noProfile()
@@ -76,6 +76,8 @@ class Palette {
                 });
             });
             const beginIndex = strData.indexOf(HIST_START) + HIST_START.length + 1, endIndex = strData.indexOf(HIST_END), cData = strData.slice(beginIndex, endIndex).split('\n');
+            if (cData.length > 8)
+                cData.splice(0, cData.length - 8);
             if (beginIndex === -1 || endIndex === -1)
                 throw (new Error(`PALETTE_DETECTION_FAILED: Image not found.`));
             return lo.compact(lo.map(cData, Palette.parseHistogramLine));

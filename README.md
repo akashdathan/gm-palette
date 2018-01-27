@@ -8,6 +8,8 @@ Dominant color and palette using graphicsmagick.
 
 [![GitHub stars](https://img.shields.io/github/stars/akashdathan/gm-palette.svg?style=social&label=Star)](https://github.com/akashdathan/gm-palette/stargazers) [![GitHub watchers](https://img.shields.io/github/watchers/akashdathan/gm-palette.svg?style=social&label=Watch)](https://github.com/akashdathan/gm-palette/subscription)
 
+![orf](sample-image.jpg)
+
 [npm-url]: https://npmjs.org/package/gm-palette
 
 ## Getting started
@@ -36,8 +38,7 @@ $ npm install gm-palette
 
 ```js
 
-const gmPalette = require('gm-palette'),
-      count     = 10 // Required number of palette colors.
+const gmPalette = require('gm-palette')
 
 //If callback is not provided, Promise is returned.
 gmPalette.dominantColor('path/to/image.jpg', (error, data) => {
@@ -55,6 +56,8 @@ gmPalette.dominantColor('/path/to/animated.gif[0]', (error, data) => {
   //{ r: 54, g: 56, b: 62 }
 })
 
+
+const count = 10 // Required number of palette colors.
 //If callback is not provided, Promise is returned.
 gmPalette.palette('path/to/image.jpg', count,  (error, data) => { 
   // If count is not provided, a default value of 10 is taken.
