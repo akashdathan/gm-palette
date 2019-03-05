@@ -6,12 +6,12 @@
 ------------------------------------------------------------------------------*/
 
 import { Rgb, Callback, InputImage, ColorPalette } from './types';
-import * as stream from 'stream';
-import * as gm from 'gm';
+import stream from 'stream';
+import gm from 'gm';
 
 export class Palette {
 
-  static async palette(image: InputImage, colorCount ?: number, callback ?: Callback) {
+  static async palette(image: InputImage, colorCount?: number, callback?: Callback) {
     try {
       const palette = await Palette.getTopColors(image, colorCount || 10);
       if (!palette) {
@@ -32,7 +32,7 @@ export class Palette {
     }
   }
 
-  static async dominantColor(image: InputImage, callback ?: Callback) {
+  static async dominantColor(image: InputImage, callback?: Callback) {
     try {
       const palette = await Palette.getTopColors(image, 1);
       if (!palette || !palette.length) {

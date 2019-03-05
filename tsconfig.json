@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "baseUrl": "src",
-    "module": "commonjs",
-    "target": "es2015",
+    "module": "esnext",
+    "target": "es2018",
     "noImplicitAny": true,
     "sourceMap": true,
     "typeRoots": ["node_modules/@types"],
@@ -10,7 +10,8 @@
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
   },
   "include": [
     "src/**/*"

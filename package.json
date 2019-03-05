@@ -1,5 +1,5 @@
 {
-  "name": "gm-palette",
+  "name": "@davidegheri/gm-palette",
   "version": "1.0.1",
   "description": "Dominant color and palette using graphicsmagick.",
   "main": "./build/index.js",
@@ -7,7 +7,7 @@
   "scripts": {
     "test": "mocha --require ts-node/register src/test/**/*.spec.ts",
     "lint": "tslint -p .",
-    "build": "tsc"
+    "build": "pack build"
   },
   "repository": {
     "type": "git",
@@ -35,9 +35,22 @@
   "dependencies": {
     "gm": "^1.23.1"
   },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-ts-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-node"
+      ]
+    ]
+  },
   "devDependencies": {
+    "@pika/pack": "^0.3.4",
+    "@pika/plugin-build-node": "^0.3.13",
+    "@pika/plugin-ts-standard-pkg": "^0.3.13",
     "@types/chai": "^4.1.1",
-    "@types/gm": "^1.17.33",
+    "@types/gm": "^1.18.2",
     "@types/lodash": "^4.14.92",
     "@types/mocha": "^2.2.46",
     "@types/node": "^9.3.0",
