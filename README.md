@@ -3,7 +3,7 @@ Dominant color and palette using graphicsmagick.
 
 [![NPM version](http://img.shields.io/npm/v/gm-palette.svg?style=flat-square)](https://www.npmjs.org/package/gm-palette) [![NPM license](http://img.shields.io/npm/l/gm-palette.svg?style=flat-square)](https://www.npmjs.org/package/gm-palette)
 
-![orf](sample-image.jpg)
+![orf](./sample-image.jpg)
 
 [npm-url]: https://npmjs.org/package/gm-palette
 

@@ -42,12 +42,17 @@
       ],
       [
         "@pika/plugin-build-node"
+      ],
+      [
+        "@pika/plugin-copy-assets",
+        {"files":  ["sample-image.jpg"]}
       ]
     ]
   },
   "devDependencies": {
     "@pika/pack": "^0.3.4",
     "@pika/plugin-build-node": "^0.3.13",
+    "@pika/plugin-copy-assets": "^0.3.13",
     "@pika/plugin-ts-standard-pkg": "^0.3.13",
     "@types/gm": "^1.18.2",
     "@types/jest": "^24.0.9",
