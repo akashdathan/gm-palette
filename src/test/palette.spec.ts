@@ -33,6 +33,15 @@ describe('Dominant Color', () => {
         expect(result2.g).not.toBeNaN();
         expect(result2.b).not.toBeNaN();
     });
+
+    it('should call the callback as second argument', (done) => {
+      dominantColor(sample1, (err, result) => {
+        expect(result).toHaveProperty('r');
+        expect(result).toHaveProperty('g');
+        expect(result).toHaveProperty('b');
+        done();
+      });
+    });
   });
 });
 
@@ -62,6 +71,25 @@ describe('Palette', () => {
         expect(val.g).not.toBeNaN();
         expect(val.b).not.toBeNaN();
       }
+    });
+
+    it('should use default colorCount value if second argument is not provided', async () => {
+      const result = await palette(sample1) as Types.Rgb[];
+      expect(result.length).toEqual(5);
+    });
+
+    it('should call the callback as second argument', (done) => {
+      palette(sample1, (err, result) => {
+        expect(result.length).toEqual(5);
+        done();
+      });
+    });
+
+    it('should call the callback as third argument', (done) => {
+      palette(sample1, 3, (err, result) => {
+        expect(result.length).toEqual(3);
+        done();
+      });
     });
   });
 });

@@ -11,21 +11,26 @@ import gm from 'gm';
 
 export class Palette {
 
-  static async palette(image: InputImage, colorCount?: number, callback?: Callback) {
+  static async palette(image: InputImage, colorOrCb?: number | Callback, callback?: Callback): Promise<Rgb[] | void> {
+    const colorCount = typeof colorOrCb === 'number' ? colorOrCb : 5;
+    let cb: Callback | undefined = callback;
+    if (typeof colorOrCb === 'function') {
+      cb = colorOrCb;
+    }
     try {
-      const palette = await Palette.getTopColors(image, colorCount || 10);
+      const palette = await Palette.getTopColors(image, colorCount);
       if (!palette) {
         throw new Error(`PALETTE_DETECTION_FAILED`);
       }
 
-      if (callback) {
-        callback(undefined, palette);
+      if (cb) {
+        cb(undefined, palette);
       } else {
         return palette;
       }
     } catch (error) {
-      if (callback) {
-        callback(error, undefined);
+      if (cb) {
+        cb(error, undefined);
       } else {
         throw(error);
       }
