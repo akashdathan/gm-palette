@@ -7,5 +7,6 @@ before_script:
 
 script:
   - npm run lint
+  - ls -la
   - npm run test
   - npm run build
