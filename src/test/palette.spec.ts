@@ -12,11 +12,14 @@ import {
 } from '../index';
 import * as Types from '../types';
 import * as path from 'path';
+import * as fs from 'fs';
 
 const sample1 = path.join(__dirname, '../../', 'sample-image.jpg');
 const sample2 = path.join(__dirname, '../../', 'sample-6.jpg');
 
-console.log(sample1);
+console.log(sample2);
+
+console.log(fs.existsSync(sample2));
 
 /* tslint:disable no-unused-expression */
 describe('Dominant Color', () => {
