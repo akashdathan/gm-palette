@@ -5,11 +5,13 @@
   "main": "./build/index.js",
   "typings": "./build/index.d.ts",
   "scripts": {
-    "test": "./node_modules/.bin/mocha build/test/palette.spec.js"
+    "test": "mocha --require ts-node/register src/test/**/*.spec.ts",
+    "lint": "tslint -p .",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/akashdathan/gm-palette.git"
+    "url": "git+https://github.com/Davide-Gheri/gm-palette.git"
   },
   "keywords": [
     "dominant color",
@@ -21,15 +23,17 @@
     "gm palette",
     "graphicsmagick"
   ],
-  "author": "Akash Dathan",
+  "contributors": [
+    "Akash Dathan",
+    "Davide Gheri"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/akashdathan/gm-palette/issues"
+    "url": "https://github.com/Davide-Gheri/gm-palette/issues"
   },
-  "homepage": "https://github.com/akashdathan/gm-palette#readme",
+  "homepage": "https://github.com/Davide-Gheri/gm-palette#readme",
   "dependencies": {
-    "gm": "^1.23.1",
-    "lodash": "^4.17.4"
+    "gm": "^1.23.1"
   },
   "devDependencies": {
     "@types/chai": "^4.1.1",
@@ -38,6 +42,9 @@
     "@types/mocha": "^2.2.46",
     "@types/node": "^9.3.0",
     "chai": "^4.1.2",
-    "mocha": "^5.0.0"
+    "mocha": "^5.0.0",
+    "ts-node": "^8.0.2",
+    "tslint": "^5.13.1",
+    "typescript": "^3.3.3333"
   }
 }

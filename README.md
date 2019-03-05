@@ -1,12 +1,7 @@
 # gm-palette
 Dominant color and palette using graphicsmagick.
 
-[![NPM](https://nodei.co/npm/gm-palette.png?downloads=true&downloadRank=true&stars=true)][npm-url]
-
-
-[![bitHound Overall Score](https://www.bithound.io/github/akashdathan/gm-palette/badges/score.svg)](https://www.bithound.io/github/akashdathan/gm-palette) [![NPM version](http://img.shields.io/npm/v/gm-palette.svg?style=flat-square)](https://www.npmjs.org/package/gm-palette) [![NPM license](http://img.shields.io/npm/l/gm-palette.svg?style=flat-square)](https://www.npmjs.org/package/gm-palette)
-
-[![GitHub stars](https://img.shields.io/github/stars/akashdathan/gm-palette.svg?style=social&label=Star)](https://github.com/akashdathan/gm-palette/stargazers) [![GitHub watchers](https://img.shields.io/github/watchers/akashdathan/gm-palette.svg?style=social&label=Watch)](https://github.com/akashdathan/gm-palette/subscription)
+[![NPM version](http://img.shields.io/npm/v/gm-palette.svg?style=flat-square)](https://www.npmjs.org/package/gm-palette) [![NPM license](http://img.shields.io/npm/l/gm-palette.svg?style=flat-square)](https://www.npmjs.org/package/gm-palette)
 
 ![orf](sample-image.jpg)
 
