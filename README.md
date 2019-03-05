@@ -1,7 +1,7 @@
 # gm-palette
 Dominant color and palette using graphicsmagick.
 
-[![NPM version](http://img.shields.io/npm/v/gm-palette.svg?style=flat-square)](https://www.npmjs.org/package/gm-palette) [![NPM license](http://img.shields.io/npm/l/gm-palette.svg?style=flat-square)](https://www.npmjs.org/package/gm-palette)
+[![NPM version](http://img.shields.io/npm/v/gm-palette.svg?style=flat-square)](https://www.npmjs.org/package/gm-palette) [![NPM license](http://img.shields.io/npm/l/gm-palette.svg?style=flat-square)](https://www.npmjs.org/package/gm-palette) [![Greenkeeper badge](https://badges.greenkeeper.io/Davide-Gheri/gm-palette.svg)](https://greenkeeper.io/)
 
 ![orf](./sample-image.jpg)
 
