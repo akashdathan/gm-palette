@@ -5,7 +5,6 @@
    Author     : Akash Dathan
 ------------------------------------------------------------------------------*/
 
-import { expect } from 'chai';
 import {
   dominantColor,
   palette,
@@ -21,18 +20,18 @@ describe('Dominant Color', () => {
   describe('Success', () => {
     it('r, g, b to exist in the response', async () => {
         const result1 = await dominantColor(sample1) as Types.Rgb;
-        expect(result1).to.have.property('r');
-        expect(result1).to.have.property('g');
-        expect(result1).to.have.property('b');
+        expect(result1).toHaveProperty('r');
+        expect(result1).toHaveProperty('g');
+        expect(result1).toHaveProperty('b');
 
         const result2 = await dominantColor(sample2) as Types.Rgb;
-        expect(result2).to.have.property('r');
-        expect(result2).to.have.property('g');
-        expect(result2).to.have.property('b');
+        expect(result2).toHaveProperty('r');
+        expect(result2).toHaveProperty('g');
+        expect(result2).toHaveProperty('b');
 
-        expect(result2.r).to.not.be.NaN;
-        expect(result2.g).to.not.be.NaN;
-        expect(result2.b).to.not.be.NaN;
+        expect(result2.r).not.toBeNaN();
+        expect(result2.g).not.toBeNaN();
+        expect(result2.b).not.toBeNaN();
     });
   });
 });
@@ -42,26 +41,26 @@ describe('Palette', () => {
     it('Array of r, g, b to exist in the response', async () => {
       const result1 = await palette(sample1, 3) as Types.Rgb[];
 
-      expect(result1.length).to.equal(3);
+      expect(result1.length).toEqual(3);
 
       for (const val of result1) {
-        expect(val).to.have.property('r');
-        expect(val).to.have.property('g');
-        expect(val).to.have.property('b');
+        expect(val).toHaveProperty('r');
+        expect(val).toHaveProperty('g');
+        expect(val).toHaveProperty('b');
       }
 
       const result2 = await palette(sample2, 3) as Types.Rgb[];
 
-      expect(result2.length).to.equal(3);
+      expect(result2.length).toEqual(3);
 
       for (const val of result2) {
-        expect(val).to.have.property('r');
-        expect(val).to.have.property('g');
-        expect(val).to.have.property('b');
+        expect(val).toHaveProperty('r');
+        expect(val).toHaveProperty('g');
+        expect(val).toHaveProperty('b');
 
-        expect(val.r).to.not.be.NaN;
-        expect(val.g).to.not.be.NaN;
-        expect(val.b).to.not.be.NaN;
+        expect(val.r).not.toBeNaN();
+        expect(val.g).not.toBeNaN();
+        expect(val.b).not.toBeNaN();
       }
     });
   });
