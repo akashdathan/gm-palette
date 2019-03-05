@@ -17,7 +17,7 @@ $ brew install graphicsmagick
 then use npm to install the module:
 
 ```bash
-$ npm install gm-palette
+$ npm install @davidegheri/gm-palette
 ```
  
 
