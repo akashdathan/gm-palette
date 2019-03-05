@@ -16,8 +16,6 @@ import * as path from 'path';
 const sample1 = path.join(__dirname, '../../', 'sample-image.jpg');
 const sample2 = path.join(__dirname, '../../', 'sample-6.jpg');
 
-console.log(sample1);
-
 /* tslint:disable no-unused-expression */
 describe('Dominant Color', () => {
   describe('Success', () => {
