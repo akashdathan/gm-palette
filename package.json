@@ -6,6 +6,7 @@
   "typings": "./build/index.d.ts",
   "scripts": {
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "build": "pack build"
   },
@@ -70,7 +71,7 @@
         "@pika/plugin-copy-assets",
         {
           "files": [
-            "sample-image.jpg"
+            "samples/sample-image.jpg"
           ]
         }
       ]
@@ -86,10 +87,6 @@
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
-    "collectCoverageFrom": [
-      "!index.ts",
-      "!types.ts"
-    ],
     "coverageDirectory": "../coverage"
   }
 }

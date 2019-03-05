@@ -12,8 +12,8 @@ import {
 import * as Types from '../types';
 import * as path from 'path';
 
-const sample1 = path.join(__dirname, '../../', 'sample-image.jpg');
-const sample2 = path.join(__dirname, '../../', 'sample-6.jpg');
+const sample1 = path.join(__dirname, '../../', 'samples', 'sample-image.jpg');
+const sample2 = path.join(__dirname, '../../', 'samples', 'sample-6.jpg');
 
 /* tslint:disable no-unused-expression */
 describe('Dominant Color', () => {
@@ -39,6 +39,22 @@ describe('Dominant Color', () => {
         expect(result).toHaveProperty('r');
         expect(result).toHaveProperty('g');
         expect(result).toHaveProperty('b');
+        done();
+      });
+    });
+  });
+
+  describe('Error', () => {
+    it('should return an error on file not found', (done) => {
+      dominantColor('notAFile.jpg', (err, result) => {
+        expect(err).toEqual(new Error('PALETTE_DETECTION_FAILED: Image not found.'));
+        done();
+      });
+    });
+
+    it('should throw an error on file not found', (done) => {
+      dominantColor('notAFile').catch(err => {
+        expect(err).toEqual(new Error('PALETTE_DETECTION_FAILED: Image not found.'));
         done();
       });
     });
@@ -88,6 +104,22 @@ describe('Palette', () => {
     it('should call the callback as third argument', (done) => {
       palette(sample1, 3, (err, result) => {
         expect(result.length).toEqual(3);
+        done();
+      });
+    });
+  });
+
+  describe('Error', () => {
+    it('should return an error on file not found', (done) => {
+      palette('notAFile.jpg', (err, result) => {
+        expect(err).toEqual(new Error('PALETTE_DETECTION_FAILED: Image not found.'));
+        done();
+      });
+    });
+
+    it('should throw an error on file not found', (done) => {
+      palette('notAFile').catch(err => {
+        expect(err).toEqual(new Error('PALETTE_DETECTION_FAILED: Image not found.'));
         done();
       });
     });

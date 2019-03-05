@@ -37,7 +37,7 @@ export class Palette {
     }
   }
 
-  static async dominantColor(image: InputImage, callback?: Callback) {
+  static async dominantColor(image: InputImage, callback?: Callback): Promise<Rgb | void> {
     try {
       const palette = await Palette.getTopColors(image, 1);
       if (!palette || !palette.length) {

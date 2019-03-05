@@ -12,4 +12,4 @@ const palette = Palette.palette;
 
 export { dominantColor, palette };
 
-export * from './cli';
+export { cli } from './cli';
