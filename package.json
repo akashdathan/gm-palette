@@ -1,6 +1,6 @@
 {
   "name": "@davidegheri/gm-palette",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Dominant color and palette using graphicsmagick.",
   "main": "./build/index.js",
   "typings": "./build/index.d.ts",
@@ -45,7 +45,11 @@
       ],
       [
         "@pika/plugin-copy-assets",
-        {"files":  ["sample-image.jpg"]}
+        {
+          "files": [
+            "sample-image.jpg"
+          ]
+        }
       ]
     ]
   },
