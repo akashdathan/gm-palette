@@ -10,7 +10,8 @@
     "experimentalDecorators": true,
     "strictNullChecks": true,
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "moduleResolution": "node"
   },
   "exclude": [
     "node_modules",
