@@ -84,7 +84,6 @@ export class Palette {
     if (cData.length > 8) {
       cData.splice(0, cData.length - 8);
     }
-    console.log(cData, strData);
     if (beginIndex === -1 || endIndex === -1) {
       throw(new Error(`PALETTE_DETECTION_FAILED: Image not found.`));
     }
