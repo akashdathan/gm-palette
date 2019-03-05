@@ -33,30 +33,14 @@
   },
   "homepage": "https://github.com/Davide-Gheri/gm-palette#readme",
   "dependencies": {
+    "commander": "^2.19.0",
     "gm": "^1.23.1"
-  },
-  "@pika/pack": {
-    "pipeline": [
-      [
-        "@pika/plugin-ts-standard-pkg"
-      ],
-      [
-        "@pika/plugin-build-node"
-      ],
-      [
-        "@pika/plugin-copy-assets",
-        {
-          "files": [
-            "sample-image.jpg"
-          ]
-        }
-      ]
-    ]
   },
   "devDependencies": {
     "@pika/pack": "^0.3.4",
     "@pika/plugin-build-node": "^0.3.13",
     "@pika/plugin-copy-assets": "^0.3.13",
+    "@pika/plugin-simple-bin": "^0.3.13",
     "@pika/plugin-ts-standard-pkg": "^0.3.13",
     "@types/gm": "^1.18.2",
     "@types/jest": "^24.0.9",
@@ -67,6 +51,30 @@
     "ts-node": "^8.0.2",
     "tslint": "^5.13.1",
     "typescript": "^3.3.3333"
+  },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-ts-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-node"
+      ],
+      [
+        "@pika/plugin-simple-bin",
+        {
+          "bin": "gm-palette"
+        }
+      ],
+      [
+        "@pika/plugin-copy-assets",
+        {
+          "files": [
+            "sample-image.jpg"
+          ]
+        }
+      ]
+    ]
   },
   "jest": {
     "moduleFileExtensions": [
