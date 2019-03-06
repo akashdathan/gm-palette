@@ -73,7 +73,7 @@
         "@pika/plugin-copy-assets",
         {
           "files": [
-            "samples/sample-image.jpg"
+            "sample-image.jpg"
           ]
         }
       ]
