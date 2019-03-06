@@ -12,8 +12,8 @@ import {
 import * as Types from '../types';
 import * as path from 'path';
 
-const sample1 = path.join(__dirname, '../../', 'sample-image.jpg');
-const sample2 = path.join(__dirname, '../../', 'sample-6.jpg');
+const sample1 = path.join(__dirname, '../../', 'samples', 'sample-image.jpg');
+const sample2 = path.join(__dirname, '../../', 'samples', 'sample-6.jpg');
 
 /* tslint:disable no-unused-expression */
 describe('Dominant Color', () => {
@@ -32,6 +32,31 @@ describe('Dominant Color', () => {
         expect(result2.r).not.toBeNaN();
         expect(result2.g).not.toBeNaN();
         expect(result2.b).not.toBeNaN();
+    });
+
+    it('should call the callback as second argument', (done) => {
+      dominantColor(sample1, (err, result) => {
+        expect(result).toHaveProperty('r');
+        expect(result).toHaveProperty('g');
+        expect(result).toHaveProperty('b');
+        done();
+      });
+    });
+  });
+
+  describe('Error', () => {
+    it('should return an error on file not found', (done) => {
+      dominantColor('notAFile.jpg', (err, result) => {
+        expect(err).toEqual(new Error('PALETTE_DETECTION_FAILED: Image not found.'));
+        done();
+      });
+    });
+
+    it('should throw an error on file not found', (done) => {
+      dominantColor('notAFile').catch(err => {
+        expect(err).toEqual(new Error('PALETTE_DETECTION_FAILED: Image not found.'));
+        done();
+      });
     });
   });
 });
@@ -62,6 +87,41 @@ describe('Palette', () => {
         expect(val.g).not.toBeNaN();
         expect(val.b).not.toBeNaN();
       }
+    });
+
+    it('should use default colorCount value if second argument is not provided', async () => {
+      const result = await palette(sample1) as Types.Rgb[];
+      expect(result.length).toEqual(5);
+    });
+
+    it('should call the callback as second argument', (done) => {
+      palette(sample1, (err, result) => {
+        expect(result.length).toEqual(5);
+        done();
+      });
+    });
+
+    it('should call the callback as third argument', (done) => {
+      palette(sample1, 3, (err, result) => {
+        expect(result.length).toEqual(3);
+        done();
+      });
+    });
+  });
+
+  describe('Error', () => {
+    it('should return an error on file not found', (done) => {
+      palette('notAFile.jpg', (err, result) => {
+        expect(err).toEqual(new Error('PALETTE_DETECTION_FAILED: Image not found.'));
+        done();
+      });
+    });
+
+    it('should throw an error on file not found', (done) => {
+      palette('notAFile').catch(err => {
+        expect(err).toEqual(new Error('PALETTE_DETECTION_FAILED: Image not found.'));
+        done();
+      });
     });
   });
 });
