@@ -1,6 +1,8 @@
 # gm-palette
 Dominant color and palette using graphicsmagick.
 
+[![Build Status](https://travis-ci.com/Davide-Gheri/gm-palette.svg?branch=master)](https://travis-ci.com/Davide-Gheri/gm-palette)
+[![Coverage Status](https://coveralls.io/repos/github/Davide-Gheri/gm-palette/badge.svg?branch=master)](https://coveralls.io/github/Davide-Gheri/gm-palette?branch=master)
 [![npm version](https://badge.fury.io/js/%40davidegheri%2Fgm-palette.svg)](https://badge.fury.io/js/%40davidegheri%2Fgm-palette) 
 [![NPM license](http://img.shields.io/npm/l/@davidegheri/gm-palette.svg?style=flat)](https://www.npmjs.org/package/@davidegheri/gm-palette) 
 [![Greenkeeper badge](https://badges.greenkeeper.io/Davide-Gheri/gm-palette.svg)](https://greenkeeper.io/)
