@@ -7,6 +7,7 @@
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",
+    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "build": "pack build"
   },
@@ -47,6 +48,7 @@
     "@types/jest": "^24.0.9",
     "@types/lodash": "^4.14.92",
     "@types/node": "^11.10.4",
+    "coveralls": "^3.0.3",
     "jest": "^24.1.0",
     "ts-jest": "^24.0.0",
     "ts-node": "^8.0.2",
