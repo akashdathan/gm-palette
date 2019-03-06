@@ -58,7 +58,7 @@ gmPalette.dominantColor('/path/to/animated.gif[0]', (error, data) => {
 });
 
 
-const count = 5; // Optional number of palette colors, default 5
+const count = 10; // Optional number of palette colors, default 5
 //If callback is not provided, Promise is returned.
 gmPalette.palette('path/to/image.jpg', count,  (error, data) => { 
   // If count is not provided, a default value of 10 is taken.
@@ -158,13 +158,33 @@ gmPalette.palette(readableStream, (error, data) => {
     { r: 62, g: 64, b: 69 },
     { r: 64, g: 63, b: 70 },
     { r: 65, g: 65, b: 63 },
-    { r: 72, g: 72, b: 78 },
-    { r: 122, g: 124, b: 130 },
-    { r: 125, g: 128, b: 132 },
-    { r: 155, g: 156, b: 159 },
-    { r: 214, g: 215, b: 217 }
   ]
   */
 })
 
+```
+
+## Cli
+
+**gm-palette** comes also with a handy Cli script:
+```bash
+$ npm i -g @davidegheri/gm-palette
+
+$ gm-palette path/to/img.jpg
+
+# [ 
+#  { r: 28, g: 31, b: 38 },
+#  { r: 59, g: 61, b: 66 },
+#  { r: 62, g: 64, b: 69 },
+#  { r: 64, g: 63, b: 70 },
+#  #{ r: 65, g: 65, b: 63 },
+# ]
+```
+To get the dominant color only:
+```bash
+$ gm-palette path/to/img.jpg --dominant
+# or
+$ gm-palette path/to/img.jpg -d
+
+# { r: 54, g: 56, b: 62 }
 ```
