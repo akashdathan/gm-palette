@@ -9,7 +9,7 @@ describe('runPalette', () => {
   beforeEach(() => {
     logSpy = jest.spyOn(console, 'log');
   });
-  it('Array of r, g, b to exist in the response', async () => {
+  it('should return an Array of Rgb objects and log it', async () => {
     const result = await runner.runPalette(sample, {}) as Types.Rgb[];
     for (const val of result) {
       expect(val).toHaveProperty('r');
@@ -25,7 +25,7 @@ describe('runPalette', () => {
     expect(logSpy).toHaveBeenCalledWith(result);
   });
 
-  it('r, g, b to exist in the response', async () => {
+  it('should return an Rgb object and log it', async () => {
     const result = await runner.runPalette(sample, {dominant: true}) as Types.Rgb;
     expect(result).toHaveProperty('r');
     expect(result).toHaveProperty('g');
@@ -38,6 +38,23 @@ describe('runPalette', () => {
   });
 });
 
+describe('runGif', () => {
+  let logSpy: any;
+
+  beforeEach(() => {
+    logSpy = jest.spyOn(console, 'log');
+  });
+  it('should return a base64 string representing the 1x1px GIF and log it', async () => {
+    const result = await runner.runGif(sample);
+    expect(typeof result).toEqual('string');
+    expect(logSpy).toHaveBeenCalledWith(result);
+  });
+
+  it('should throw an error on file path not passed', () => {
+    expect(runner.runGif('')).rejects.toEqual(new Error('File path is required'));
+  });
+});
+
 describe('Cli', () => {
   const argv = [
     '',
@@ -45,18 +62,32 @@ describe('Cli', () => {
     sample,
   ];
 
-  let runSpy: any;
-
-  beforeEach(() => {
-    runSpy = jest.spyOn(runner, 'runPalette');
-  });
-
-  it('Array of r, g, b to exist in the response', async () => {
+  it('should return an Array of Rgb objects', async () => {
     const result = await runner.cli(argv) as Types.Rgb[];
     for (const val of result) {
       expect(val).toHaveProperty('r');
       expect(val).toHaveProperty('g');
       expect(val).toHaveProperty('b');
     }
+  });
+
+  it('should return an Rgb object', async () => {
+    const dominantArgv = [
+      ...argv,
+      '-d',
+    ];
+    const result = await runner.cli(dominantArgv) as Types.Rgb;
+    expect(result).toHaveProperty('r');
+    expect(result).toHaveProperty('g');
+    expect(result).toHaveProperty('b');
+  });
+
+  it('should return a base64 string representing the 1x1px GIF', async () => {
+    const gifArgv = [
+      ...argv,
+      '-g',
+    ];
+    const result = await runner.cli(gifArgv) as string;
+    expect(typeof result).toEqual('string');
   });
 });

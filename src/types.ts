@@ -16,4 +16,4 @@ export interface Rgb {
 export type ColorPalette = Rgb[];
 export type InputImage = NodeJS.ReadableStream | Buffer | string;
 
-export type Callback = (error: any, data: any) => any;
+export type Callback = (error: any, data: any) => void;

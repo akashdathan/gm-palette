@@ -164,6 +164,22 @@ gmPalette.palette(readableStream, (error, data) => {
 
 ```
 
+## GIF
+You can get a base64 encoded string representing a 1x1px GIF filled with the dominant color
+```js
+const gmPalette = require('@davidegheri/gm-palette');
+
+//If callback is not provided, Promise is returned.
+gmPalette.dominantColorGIF('path/to/image.jpg', (error, data) => {
+    if (error) {
+        console.log('Error', error);
+    }
+    console.log('Result: ', data);
+    
+    // data:image/gif;base64,R0lGODlhAQABAIABAEMsZgAAACwAAAAAAQABAAACAkQBAA==
+})
+``` 
+
 ## Cli
 
 **gm-palette** comes also with a handy Cli script:
@@ -187,4 +203,12 @@ $ gm-palette path/to/img.jpg --dominant
 $ gm-palette path/to/img.jpg -d
 
 # { r: 54, g: 56, b: 62 }
+```
+To get the base64 encoded GIF:
+```bash
+$ gm-palette path/to/img.jpg --gif
+# or
+$ gm-palette path/to/img.jpg -g
+
+# data:image/gif;base64,R0lGODlhAQABAIABAEMsZgAAACwAAAAAAQABAAACAkQBAA==
 ```
