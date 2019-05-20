@@ -655,10 +655,10 @@
     rollup "^1.1.0"
     rollup-plugin-babel "^4.3.0"
 
-"@pika/plugin-copy-assets@^0.3.13":
-  version "0.3.14"
-  resolved "https://registry.yarnpkg.com/@pika/plugin-copy-assets/-/plugin-copy-assets-0.3.14.tgz#72db32d59ec3f62d49ae954886adfd6cf89c4d80"
-  integrity sha512-Zi5VzKMkias7OljZTXPCuy71CpO+tfTJfK8mG5N28Ssf9uWKZRq7p/+9TcS4BTqMWL5bTkzcb7EbTXNs67quDA==
+"@pika/plugin-copy-assets@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@pika/plugin-copy-assets/-/plugin-copy-assets-0.4.0.tgz#ee2691aa8a0930ecc091f942a7a5ea431e350d9c"
+  integrity sha512-x5+397UjPnUG89Gafyrzby+2x8yoNZRf42/Hmq+nlHl8bQZe3WyIyQueHygxGmitWcliAcXHAo0tbUAA5/2NwQ==
   dependencies:
     copy-concurrently "^1.0.5"
 
