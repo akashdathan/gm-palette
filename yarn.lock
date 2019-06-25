@@ -655,10 +655,10 @@
     rollup "^1.1.0"
     rollup-plugin-babel "^4.3.0"
 
-"@pika/plugin-copy-assets@^0.3.13":
-  version "0.3.14"
-  resolved "https://registry.yarnpkg.com/@pika/plugin-copy-assets/-/plugin-copy-assets-0.3.14.tgz#72db32d59ec3f62d49ae954886adfd6cf89c4d80"
-  integrity sha512-Zi5VzKMkias7OljZTXPCuy71CpO+tfTJfK8mG5N28Ssf9uWKZRq7p/+9TcS4BTqMWL5bTkzcb7EbTXNs67quDA==
+"@pika/plugin-copy-assets@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@pika/plugin-copy-assets/-/plugin-copy-assets-0.4.0.tgz#ee2691aa8a0930ecc091f942a7a5ea431e350d9c"
+  integrity sha512-x5+397UjPnUG89Gafyrzby+2x8yoNZRf42/Hmq+nlHl8bQZe3WyIyQueHygxGmitWcliAcXHAo0tbUAA5/2NwQ==
   dependencies:
     copy-concurrently "^1.0.5"
 
@@ -724,10 +724,15 @@
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.122.tgz#3e31394c38cf1e5949fb54c1192cbc406f152c6c"
   integrity sha512-9IdED8wU93ty8gP06ninox+42SBSJHp2IAamsSYMUY76mshRTeUsid/gtbl8ovnOwy8im41ib4cxTiIYMXGKew==
 
-"@types/node@*", "@types/node@^11.10.4", "@types/node@^11.9.5":
+"@types/node@*", "@types/node@^11.9.5":
   version "11.10.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-11.10.4.tgz#3f5fc4f0f322805f009e00ab35a2ff3d6b778e42"
   integrity sha512-wa09itaLE8L705aXd8F80jnFpxz3Y1/KRHfKsYL2bPc0XF+wEWu8sR9n5bmeu8Ba1N9z2GRNzm/YdHcghLkLKg==
+
+"@types/node@^12.0.0":
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.0.tgz#d11813b9c0ff8aaca29f04cbc12817f4c7d656e5"
+  integrity sha512-Jrb/x3HT4PTJp6a4avhmJCDEVrPdqLfl3e8GGMbpkGGdwAV5UGlIs4vVEfsHHfylZVOKZWpOqmqFH8CbfOZ6kg==
 
 abab@^2.0.0:
   version "2.0.0"
