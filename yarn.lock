@@ -662,12 +662,12 @@
   dependencies:
     copy-concurrently "^1.0.5"
 
-"@pika/plugin-simple-bin@^0.3.13":
-  version "0.3.14"
-  resolved "https://registry.yarnpkg.com/@pika/plugin-simple-bin/-/plugin-simple-bin-0.3.14.tgz#2ba99f66631a87200aa83bd1c2db6d2db31b668e"
-  integrity sha512-qG/Hj7MAWf4+rbQ/9ISoE3CCZdxa3HSGk0KVzmfAGR+MdZk0FMZM4oTn7QsaB2hpQ60t17KQoJSoHUaVCfpiXg==
+"@pika/plugin-simple-bin@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@pika/plugin-simple-bin/-/plugin-simple-bin-0.4.0.tgz#2dad8d5d3e73457ac3fedad2e936445714e5953e"
+  integrity sha512-vVtYT4pIp1oTZVNPirnU4XeQn+LLz0AIx6XgIGbOgknxYZghIG9zWMmBttvcSjcfnPGijKeSIuz+vgmaVBovJw==
   dependencies:
-    "@pika/types" "^0.3.5"
+    "@pika/types" "^0.4.0"
 
 "@pika/plugin-ts-standard-pkg@^0.3.13":
   version "0.3.14"
