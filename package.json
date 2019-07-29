@@ -1,6 +1,6 @@
 {
   "name": "@davidegheri/gm-palette",
-  "version": "3.0.0",
+  "version": "4.0.0-beta.0",
   "description": "Dominant color and palette using graphicsmagick.",
   "main": "./dist/node/index.js",
   "typings": "./dist/types/index.d.ts",
