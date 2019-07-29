@@ -2,14 +2,26 @@
   "name": "@davidegheri/gm-palette",
   "version": "3.0.0",
   "description": "Dominant color and palette using graphicsmagick.",
-  "main": "./build/index.js",
-  "typings": "./build/index.d.ts",
+  "main": "./dist/node/index.js",
+  "typings": "./dist/types/index.d.ts",
+  "module": "./dist/src/index.js",
+  "bin": {
+    "gm-palette": "./dist/node/bin/index.js"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "lint": "tslint -p tsconfig.json -c tslint.json",
-    "build": "pack build"
+    "build:clean": "rimraf ./dist",
+    "build:es": "tsc -p tsconfig.es.json",
+    "build:node": "tsc -p tsconfig.node.json",
+    "build": "yarn build:clean && yarn build:node && yarn build:es",
+    "preversion": "yarn test && yarn lint",
+    "version": "yarn build"
   },
   "repository": {
     "type": "git",
@@ -39,45 +51,17 @@
     "gm": "^1.23.1"
   },
   "devDependencies": {
-    "@pika/pack": "^0.3.4",
-    "@pika/plugin-build-node": "^0.4.0",
-    "@pika/plugin-copy-assets": "^0.4.0",
-    "@pika/plugin-simple-bin": "^0.4.0",
-    "@pika/plugin-ts-standard-pkg": "^0.3.13",
     "@types/gm": "^1.18.2",
     "@types/jest": "^24.0.9",
     "@types/lodash": "^4.14.92",
     "@types/node": "^12.0.0",
     "coveralls": "^3.0.3",
     "jest": "^24.1.0",
+    "rimraf": "^2.6.3",
     "ts-jest": "^24.0.0",
     "ts-node": "^8.0.2",
     "tslint": "^5.13.1",
     "typescript": "^3.3.3333"
-  },
-  "@pika/pack": {
-    "pipeline": [
-      [
-        "@pika/plugin-ts-standard-pkg"
-      ],
-      [
-        "@pika/plugin-build-node"
-      ],
-      [
-        "@pika/plugin-simple-bin",
-        {
-          "bin": "gm-palette"
-        }
-      ],
-      [
-        "@pika/plugin-copy-assets",
-        {
-          "files": [
-            "sample-image.jpg"
-          ]
-        }
-      ]
-    ]
   },
   "jest": {
     "moduleFileExtensions": [

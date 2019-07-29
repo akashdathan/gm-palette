@@ -16,10 +16,10 @@ export function runPalette(filePath: string, {dominant, colorCount}: {dominant?:
       promise = Palette.palette(filePath, colorCount || 5);
     }
     promise
-      .then(value => {
-        console.log(value);
-        resolve(value);
-      }).catch(reject);
+    .then(value => {
+      console.log(value);
+      resolve(value);
+    }).catch(reject);
   });
 }
 
@@ -30,10 +30,10 @@ export function runGif(filePath: string): Promise<string> {
     }
     const GifGen = new GifGenerator();
     GifGen.createGIF(filePath)
-      .then(value => {
-        console.log(value);
-        resolve(value);
-      }).catch(reject);
+    .then(value => {
+      console.log(value);
+      resolve(value);
+    }).catch(reject);
   });
 }
 

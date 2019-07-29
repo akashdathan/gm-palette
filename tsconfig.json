@@ -2,10 +2,10 @@
   "compilerOptions": {
     "baseUrl": "src",
     "module": "esnext",
-    "target": "es2018",
+    "target": "esnext",
     "noImplicitAny": true,
     "sourceMap": true,
-    "declaration": true,
+    "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "strictNullChecks": true,
@@ -13,6 +13,7 @@
     "esModuleInterop": true,
     "moduleResolution": "node"
   },
+  "include": ["src"],
   "exclude": [
     "node_modules",
     "src/test"
