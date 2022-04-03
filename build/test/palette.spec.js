@@ -6,10 +6,11 @@
    Author     : Akash Dathan
 ------------------------------------------------------------------------------*/
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
@@ -19,7 +20,7 @@ const index_1 = require("../index");
 const path = require("path");
 describe("Dominant Color", () => {
     describe("Success", () => {
-        it("r, g, b to exist in the response", () => __awaiter(this, void 0, void 0, function* () {
+        it("r, g, b to exist in the response", () => __awaiter(void 0, void 0, void 0, function* () {
             const result = yield index_1.dominantColor(path.join(__dirname, '../../sample-image.jpg'));
             chai_1.expect(result).to.have.property('r');
             chai_1.expect(result).to.have.property('g');
@@ -29,7 +30,7 @@ describe("Dominant Color", () => {
 });
 describe("Palette", () => {
     describe("Success", () => {
-        it("Array of r, g, b to exist in the response", () => __awaiter(this, void 0, void 0, function* () {
+        it("Array of r, g, b to exist in the response", () => __awaiter(void 0, void 0, void 0, function* () {
             const result = yield index_1.palette(path.join(__dirname, '../../sample-image.jpg'), 3);
             chai_1.expect(result.length).to.equal(3);
             for (const val of result) {
