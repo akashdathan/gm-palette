@@ -1,5 +1,6 @@
-<img alt="gm-palette" src="sample-image.jpg">
-
+<p align="center">
+    <img alt="gm-palette" align="center" src="sample-image.jpg">
+</p>
 <h1 align="center">Graphicsmagic Palette</h1>
 
 <p align="center">
