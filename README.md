@@ -1,7 +1,15 @@
-# gm-palette
-Dominant color and palette using graphicsmagick.
+<img alt="gm-palette" src="sample-image.jpg">
 
-![orf](sample-image.jpg)
+<h1 align="center">Graphicsmagic Palette</h1>
+
+<p align="center">
+  Dominant color and palette using graphicsmagick
+</p>
+<p align="center">
+  <a href="https://twitter.com/akash_dathan">
+    <img src="https://img.shields.io/twitter/follow/akash_dathan?style=flat&label=akash_dathan&logo=twitter&color=0bf&logoColor=fff" alt="Akash Dathan Twitter follow" />
+  </a>
+</p>
 
 [npm-url]: https://npmjs.org/package/gm-palette
 
@@ -172,6 +180,8 @@ gmPalette.palette(readableStream, count,  (error, data) => {
   ]
   */
 })
-
-
 ```
+
+## Author
+
+- Akash Dathan ([@akash_dathan](https://twitter.com/akash_dathan))

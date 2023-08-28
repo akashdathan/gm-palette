@@ -1,45 +1,29 @@
-/*------------------------------------------------------------------------------
-   About      : Spec File for Testing.
-   
-   Created on : Mon Jan 22 2018
-   Author     : Akash Dathan
-------------------------------------------------------------------------------*/
+import { dominantColor, palette } from '../index'
+import * as path from 'path'
 
 
-import {expect}                                  from 'chai'
-import {
-          dominantColor,
-          palette
-       }                                         from '../index'
-import * as Types                                from '../types'
-import * as path                                 from 'path'
-
-
-describe("Dominant Color", () => {
-  describe("Success", () => {
+describe("Tests", () => {
     it("r, g, b to exist in the response", async () => {
-        const result = await dominantColor(path.join(__dirname, '../../sample-image.jpg')) as Types.rgb
-        expect(result).to.have.property('r')
-        expect(result).to.have.property('g')
-        expect(result).to.have.property('b')
-    })
-  })
-})
+        const result = await dominantColor(path.join(__dirname, '../../sample-image.jpg'))
 
-describe("Palette", () => {
-  describe("Success", () => {
+        expect(result).toHaveProperty('r')
+        expect(result).toHaveProperty('g')
+        expect(result).toHaveProperty('b')
+    })
+
     it("Array of r, g, b to exist in the response", async () => {
-      const result = await palette(path.join(__dirname, '../../sample-image.jpg'), 3) as Types.rgb[]
+        const result = await palette(path.join(__dirname, '../../sample-image.jpg'), 3)
 
-      expect(result.length).to.equal(3)
+        console.info(path.join(__dirname, './sample-image.jpg'))
 
-      for(const val of result) {
-        expect(val).to.have.property('r')
-        expect(val).to.have.property('g')
-        expect(val).to.have.property('b')
-      }
+        expect(result?.length).toEqual(3)
+
+        for(const val of result || []) {
+            expect(val).toHaveProperty('r')
+            expect(val).toHaveProperty('g')
+            expect(val).toHaveProperty('b')
+        }
     })
-  })
 })
 
 

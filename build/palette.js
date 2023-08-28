@@ -1,10 +1,4 @@
 "use strict";
-/*------------------------------------------------------------------------------
-   About      : Dominant color and palette using Imagemagick
-   
-   Created on : Sat Jan 13 2018
-   Author     : Akash Dathan
-------------------------------------------------------------------------------*/
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -33,7 +27,7 @@ class Palette {
             }
             catch (error) {
                 if (callback)
-                    callback(error, undefined);
+                    callback(error);
                 else
                     throw (error);
             }
@@ -61,7 +55,8 @@ class Palette {
     }
     static getTopColors(image, colorCount) {
         return __awaiter(this, void 0, void 0, function* () {
-            const HIST_START = 'comment={', HIST_END = '\x0A}';
+            const HIST_START = 'comment={';
+            const HIST_END = '\x0A}';
             const strData = yield new Promise((resolve, reject) => {
                 gm(image)
                     .noProfile()
@@ -77,11 +72,13 @@ class Palette {
                     stdout.pipe(writeStream);
                 });
             });
-            const beginIndex = strData.indexOf(HIST_START) + HIST_START.length + 1, endIndex = strData.indexOf(HIST_END), cData = strData.slice(beginIndex, endIndex).split('\n');
+            const beginIndex = strData.indexOf(HIST_START) + HIST_START.length + 1;
+            const endIndex = strData.indexOf(HIST_END);
+            const cData = strData.slice(beginIndex, endIndex).split('\n');
             if (cData.length > 8)
                 cData.splice(0, cData.length - 8);
             if (beginIndex === -1 || endIndex === -1)
-                throw (new Error(`PALETTE_DETECTION_FAILED: Image not found.`));
+                throw (new Error(`PALETTE_DETECTION_FAILED: Image not found or graphicsmagik not installed.`));
             return lo.compact(lo.map(cData, Palette.parseHistogramLine));
         });
     }
